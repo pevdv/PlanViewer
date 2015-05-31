@@ -1,0 +1,31 @@
+<h1>Listing buildings</h1>
+
+<table>
+
+
+  <tbody>
+    <% @buildings.each do |building| %>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+     	<td>
+       		<%= image_tag(building.image_url, class: 'list_image') %>
+        </td>
+      	<td class="list_description">
+      		<dl>
+      			<dt><%= building.name %></dt>
+      			<dd><%= truncate(strip_tags(building.address), length: 80) %></dd>
+      			<dd><%= building.postal_code %></dd>
+      		</dl>
+      	</td>
+        <td class="list_actions">
+        	<%= link_to 'Show', building %><br/>
+        	<%= link_to 'Edit', edit_building_path(building) %><br/>
+        	<%= link_to 'Destroy', building, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Building', new_building_path %>
