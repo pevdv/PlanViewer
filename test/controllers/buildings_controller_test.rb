@@ -3,6 +3,12 @@ require 'test_helper'
 class BuildingsControllerTest < ActionController::TestCase
   setup do
     @building = buildings(:one)
+    @update = {
+      name: 'B1',
+      address: '1 Bay Road, Toronto, ON, Canada',
+      postal_code: 'K0d 4J0',
+      image_url: 'wibble.jpg'
+    }
   end
 
   test "should get index" do
@@ -18,7 +24,7 @@ class BuildingsControllerTest < ActionController::TestCase
 
   test "should create building" do
     assert_difference('Building.count') do
-      post :create, building: { address: @building.address, name: @building.name, postal_code: @building.postal_code }
+      post :create, building: @update
     end
 
     assert_redirected_to building_path(assigns(:building))
@@ -35,7 +41,7 @@ class BuildingsControllerTest < ActionController::TestCase
   end
 
   test "should update building" do
-    patch :update, id: @building, building: { address: @building.address, name: @building.name, postal_code: @building.postal_code }
+    patch :update, id: @building, building: @update
     assert_redirected_to building_path(assigns(:building))
   end
 

@@ -1,11 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  address: MyText
-  name: MyString
-  postal_code: MyText
-
+  address: 1 Yonge Street, Toronto, ON, Canada
+  name: ds
+  postal_code: S0N Y8K
+  image_url: sb1.jpg
+  
 two:
-  address: MyText
-  name: MyString
-  postal_code: MyText
+  address: 2 Yonge Street, Toronto, ON, Canada
+  name: ds2
+  postal_code: S0N Y82
+  image_url: sb2.jpg
+  
+three:
+  address: 3 Yonge Street, Toronto, ON, Canada
+  name: ds3
+  postal_code: S0N Y83
+  image_url: sb3.jpg
