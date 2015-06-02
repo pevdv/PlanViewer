@@ -32,7 +32,7 @@ class BuildingTest < ActiveSupport::TestCase
   end
   
   test "building not valid without a unique name" do
-    building = Building.new(name: buildings(:one).name,
+    building = Building.new(name: buildings(:sb1).name,
                             address: "xxx",
                             postal_code: "yyy",
                             image_url: "zzz.gif")
@@ -41,7 +41,7 @@ class BuildingTest < ActiveSupport::TestCase
   end
   
     test "building not valid without a unique address" do
-    building = Building.new(address: buildings(:two).address,
+    building = Building.new(address: buildings(:sb2).address,
                             name: "aaa",
                             postal_code: "bbb",
                             image_url: "zzz.gif")
@@ -50,7 +50,7 @@ class BuildingTest < ActiveSupport::TestCase
   end
   
     test "building not valid without a postal_code" do
-    building = Building.new(postal_code: buildings(:three).postal_code,
+    building = Building.new(postal_code: buildings(:sb3).postal_code,
                             address: "ddd",
                             name: "eee",
                             image_url: "zzz.gif")

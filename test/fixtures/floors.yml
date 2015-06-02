@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+normal:
+  number: 1
+  code: MyString
+  building: sb1
+
+negative:
+  number: 1
+  code: MyString
+  building: sb1

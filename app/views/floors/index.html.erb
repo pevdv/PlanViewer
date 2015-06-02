@@ -1,0 +1,28 @@
+<h1>Listing floors</h1>
+
+<table>
+  <tbody>
+    <% @floors.each do |floor| %>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+      	<td>
+       		<%= floor.building.name %>
+        </td>
+        <td class="list_description">
+        	<dl>
+        		<dt><%= floor.number %></dt>
+        		<dt><%= floor.code %></dt>
+        	</dl>
+        </td>
+        <td class="list_actions">
+        	<%= link_to 'Show', floor %><br/>
+        	<%= link_to 'Edit', edit_floor_path(floor) %><br/>
+        	<%= link_to 'Destroy', floor, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Floor', new_floor_path %>

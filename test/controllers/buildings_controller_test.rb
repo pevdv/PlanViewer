@@ -2,7 +2,7 @@ require 'test_helper'
 
 class BuildingsControllerTest < ActionController::TestCase
   setup do
-    @building = buildings(:one)
+    @building = buildings(:sb1)
     @update = {
       name: 'B1',
       address: '1 Bay Road, Toronto, ON, Canada',
