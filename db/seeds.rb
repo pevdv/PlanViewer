@@ -17,7 +17,7 @@ buildings = Building.create!([{
   name: 'Sunnybrook Building 2',
   postal_code: 'S0N Y8T',
   image_url: 'sb2.jpg'
-  }])
+}])
 
 Floor.delete_all
 buildings[0].floor.create!([{
@@ -27,7 +27,7 @@ buildings[0].floor.create!([{
   {
   number: 2,
   code: 'TWO',
-  }])
+}])
 buildings[1].floor.create!([{
   number: 1,
   code: 'UNO',
@@ -35,5 +35,43 @@ buildings[1].floor.create!([{
   {
   number: 2,
   code: 'DOS',
-  }])
+}])
   
+Layout.delete_all
+buildings[0].floor[0].layout.create!([{
+  description: 'blueprint',
+  file_location: 'C:\\file0'
+  },
+  {
+  description: 'electrical',
+  file_location: 'C:\\file1'
+}])
+
+
+buildings[0].floor[1].layout.create!([{
+  description: "blueprint",
+  file_location: "C:\\file2"
+  },
+  {
+  description:"electrical",
+  file_location: "C:\\file3"
+}])
+
+buildings[1].floor[0].layout.create!([{
+  description: "HVAC",
+  file_location: "C:\\file4"
+  },
+  {
+  description: "electrical",
+  file_location: "C:\\file5"
+}])
+
+buildings[1].floor[1].layout.create!([{
+  description: "HVAC",
+  file_location: "C:\\file6"
+  },
+  {
+  description: "electrical",
+  file_location: "C:\\file7"
+}])
+

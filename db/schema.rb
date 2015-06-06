@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150602005501) do
+ActiveRecord::Schema.define(version: 20150604235901) do
 
   create_table "buildings", force: true do |t|
     t.text     "address"
@@ -31,5 +31,15 @@ ActiveRecord::Schema.define(version: 20150602005501) do
   end
 
   add_index "floors", ["building_id"], name: "index_floors_on_building_id"
+
+  create_table "layouts", force: true do |t|
+    t.string   "description"
+    t.string   "file_location"
+    t.integer  "floor_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "layouts", ["floor_id"], name: "index_layouts_on_floor_id"
 
 end

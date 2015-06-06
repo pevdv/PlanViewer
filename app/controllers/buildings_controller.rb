@@ -5,6 +5,7 @@ class BuildingsController < ApplicationController
   # GET /buildings.json
   def index
     @buildings = Building.all
+    #render :json => @buildings
   end
 
   # GET /buildings/1

@@ -11,15 +11,6 @@ class FloorTest < ActiveSupport::TestCase
      assert floor.errors[:building].any?
    end
    
-   test "floor must have a valid building_id foreign key" do
-     floor = Floor.new(number: 1,
-                       code: "ONE",
-                       building: floors(:normal).building)
-     assert floor.errors[:building].none?, "#{floors(:normal).building_id} should be valid"
-     assert floor.errors[:code].none?
-     assert floor.errors[:number].none?
-   end
-   
    test "must be greater than 0" do
      floor = Floor.new(code: "ONE",
                        building: floors(:normal).building)
