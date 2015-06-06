@@ -1,0 +1,29 @@
+<h1>Listing layouts</h1>
+
+<table>
+  <tbody>
+    <% @layouts.each do |layout| %>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+      	<td>
+       		<%= layout.floor.building.name %>
+       		<p>Floor: <%= layout.floor.number %></p>
+        </td>
+        <td class="list_description">
+        	<dl>
+        		<dt>Description: <%= layout.description %></dt>
+        		<dt><%= layout.file_location %></dt>
+        	</dl>
+        </td>
+        <td class="list_actions">
+        	<%= link_to 'Show', layout %><br/>
+        	<%= link_to 'Edit', edit_layout_path(layout) %><br/>
+        	<%= link_to 'Destroy', layout, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Layout', new_layout_path %>

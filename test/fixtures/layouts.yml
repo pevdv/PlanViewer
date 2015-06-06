@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+blueprint:
+  description: blueprint 
+  file_location: C:\\blueprint
+  floor: normal
+
+hvac:
+  description: HVAC
+  file_location: C:\\HVAC
+  floor: normal

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @layout.description %>
+</p>
+
+<p>
+  <strong>File location:</strong>
+  <%= @layout.file_location %>
+</p>
+
+<p>
+  <strong>Floor:</strong>
+  <%= @layout.floor %>
+</p>
+
+<%= link_to 'Edit', edit_layout_path(@layout) %> |
+<%= link_to 'Back', layouts_path %>
