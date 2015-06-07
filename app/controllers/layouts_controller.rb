@@ -4,7 +4,11 @@ class LayoutsController < ApplicationController
   # GET /layouts
   # GET /layouts.json
   def index
-    @layouts = Layout.all
+    if params[:floor_id] == nil
+      @layouts = Layout.all
+    else
+      @layouts = Layout.where("floor_id = ?", params[:floor_id])
+    end
   end
 
   # GET /layouts/1

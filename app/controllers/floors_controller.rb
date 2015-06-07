@@ -4,7 +4,11 @@ class FloorsController < ApplicationController
   # GET /floors
   # GET /floors.json
   def index
-    @floors = Floor.all
+    if params[:building_id] == nil
+      @floors = Floor.all
+    else
+      @floors = Floor.where("building_id = ?", params[:building_id])
+    end
   end
 
   # GET /floors/1

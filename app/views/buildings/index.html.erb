@@ -15,6 +15,7 @@
       		</dl>
       	</td>
         <td class="list_actions">
+        	<%= link_to 'Floors', floors_path(:building_id => building.id) %><br/>
         	<%= link_to 'Show', building %><br/>
         	<%= link_to 'Edit', edit_building_path(building) %><br/>
         	<%= link_to 'Destroy', building, method: :delete, data: { confirm: 'Are you sure?' } %>

@@ -14,6 +14,7 @@
         	</dl>
         </td>
         <td class="list_actions">
+        	<%= link_to 'Layouts', layouts_path(:floor_id => floor.id) %><br/>
         	<%= link_to 'Show', floor %><br/>
         	<%= link_to 'Edit', edit_floor_path(floor) %><br/>
         	<%= link_to 'Destroy', floor, method: :delete, data: { confirm: 'Are you sure?' } %>
