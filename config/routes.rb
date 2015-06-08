@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'navigator/index'
+
   resources :layouts
 
   resources :floors

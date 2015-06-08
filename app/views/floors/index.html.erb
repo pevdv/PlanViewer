@@ -10,14 +10,17 @@
         <td class="list_description">
         	<dl>
         		<dt><%= floor.number %></dt>
+        		<dt>ID: <%= floor.id %></dt>
         		<dt><%= floor.code %></dt>
         	</dl>
         </td>
         <td class="list_actions">
+        	<%= link_to 'Mobile Device App', navigator_index_path(:floor_id => floor.id) %><br/>
         	<%= link_to 'Layouts', layouts_path(:floor_id => floor.id) %><br/>
         	<%= link_to 'Show', floor %><br/>
         	<%= link_to 'Edit', edit_floor_path(floor) %><br/>
         	<%= link_to 'Destroy', floor, method: :delete, data: { confirm: 'Are you sure?' } %>
+        	
         </td>
       </tr>
     <% end %>

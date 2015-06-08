@@ -1,0 +1,18 @@
+<h1>Navigator#index</h1>
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<h1>Application Navigator :D</h1>
+<div class="left_panel">
+	<ul>
+		<% @layouts.each do |layout| %>
+		<li><%= link_to layout.description, navigator_index_path(:layout_id => layout.id) %></li>
+		<% end %>
+	</ul>
+</div>
+<% if @layout != nil %>
+	<div class="content">
+		<%= image_tag(@layout.file_location, class: 'image') %>
+	</div>
+<% end %>

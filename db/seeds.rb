@@ -39,12 +39,12 @@ buildings[1].floor.create!([{
   
 Layout.delete_all
 buildings[0].floor[0].layout.create!([{
-  description: 'blueprint',
-  file_location: 'C:\\file0'
+  description: 'floor plan',
+  file_location: 'sb1fl1fp.jpg'
   },
   {
   description: 'electrical',
-  file_location: 'C:\\file1'
+  file_location: 'sb1fl1va.jpg'
 }])
 
 
