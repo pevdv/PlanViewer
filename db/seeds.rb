@@ -10,7 +10,7 @@ buildings = Building.create!([{
   address: %{1 Yonge Street, Toronto, ON, Canada},
   name: 'Sunnybrook Building 1',
   postal_code: 'S0N Y8K',
-  image_url: 'sb1.jpg'
+  image_url: 'sb1.png'
   },
   {
   address: %{2 Yonge Street, Toronto, ON, Canada},

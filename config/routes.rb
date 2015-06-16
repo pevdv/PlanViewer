@@ -1,6 +1,45 @@
 Rails.application.routes.draw do
-  get 'navigator/index'
+  
+  match "/application.manifest" => Rails::Offline, via: [:get]
 
+=begin
+  offline = Rack::Offline.configure :cache_interval => 1 do
+    #cache "images/masthead.png"
+    cache ActionController::Base.helpers.asset_path("application.js")
+    #cache ActionController::Base.helpers.asset_path("jquery.js")
+    #cache ActionController::Base.helpers.asset_path("jquery_ujs.js")
+    cache ActionController::Base.helpers.asset_path("jquery.tmpl.min.js")
+    cache ActionController::Base.helpers.asset_path("jquery.offline.js")
+    cache ActionController::Base.helpers.asset_path("json.js")
+    cache ActionController::Base.helpers.asset_path("custom.js")
+    cache ActionController::Base.helpers.asset_path("validate.js")
+    cache ActionController::Base.helpers.asset_path("application.css")
+    cache ActionController::Base.helpers.asset_path("style.css")
+    cache ActionController::Base.helpers.asset_path("custom.css")
+    
+    public_path = Rails.public_path
+    Dir[public_path.join("stylesheets/*.css")].each do |file|
+      cache file.relative_path_from(public_path)
+    end
+    
+    cache "/images/sb1.jpg"
+    cache "/stylesheets/buildings.css"
+    cache "/javascripts/buildings.js"
+    
+    #cache ActionController::Base.helpers.asset_path("buildings.css")
+    #cache ActionController::Base.helpers.asset_path("floors.css")
+    #cache ActionController::Base.helpers.asset_path("layouts.css")
+    #cache ActionController::Base.helpers.asset_path("buildings.js")
+    #cache ActionController::Base.helpers.asset_path("floors.js")
+    #cache ActionController::Base.helpers.asset_path("layouts.js")
+    #cache ActionController::Base.helpers.asset_path("navigator.js")
+    network "/"
+  end
+  get "/application.manifest" => offline
+=end
+  
+  get 'navigator/index'
+  
   resources :layouts
 
   resources :floors
